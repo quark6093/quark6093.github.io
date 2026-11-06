@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日大乱斗-大乱斗玩法_每日大乱斗热门对局与角色搭配</title>
+<meta name="description" content="每日大乱斗聚合页：每天更新的乱斗对局看点、热门角色搭配思路与模式玩法拆解，帮助玩家快速了解每日大乱斗的内容走向与上手路径。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23121a2b'/%3E%3Cpath d='M18 44 L32 16 L46 44 Z' fill='%23ff8a3d'/%3E%3Ccircle cx='32' cy='36' r='6' fill='%23121a2b'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#121a2b;
+  --ink-2:#1d2942;
+  --paper:#f5f2ec;
+  --card:#ffffff;
+  --line:#e2ddd2;
+  --accent:#ff6a2b;
+  --accent-2:#ffb020;
+  --cool:#2f6bd8;
+  --text:#232a38;
+  --muted:#6c7484;
+  --radius:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  background:var(--paper);
+  color:var(--text);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img,svg{display:block;max-width:100%}
+.wrap{width:min(1120px,92vw);margin:0 auto}
+
+/* ---------- header ---------- */
+.site-header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(18,26,43,.95);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.header-in{
+  display:flex;align-items:center;gap:20px;
+  padding:12px 0;
+}
+.logo{
+  display:flex;align-items:center;gap:10px;
+  color:#fff;font-weight:800;font-size:18px;letter-spacing:.5px;
+  white-space:nowrap;
+}
+.logo .mark{
+  width:38px;height:38px;border-radius:11px;
+  background:linear-gradient(140deg,var(--accent),var(--accent-2));
+  display:grid;place-items:center;flex:none;
+  box-shadow:0 4px 14px rgba(255,106,43,.35);
+}
+.logo .mark svg{width:22px;height:22px}
+.nav{
+  display:flex;gap:4px;margin-left:auto;flex-wrap:wrap;
+}
+.nav a{
+  color:#cfd6e4;font-size:14px;padding:7px 12px;border-radius:9px;
+  transition:.2s;
+}
+.nav a:hover{background:rgba(255,255,255,.1);color:#fff}
+.nav a.cta{
+  background:var(--accent);color:#fff;font-weight:600;
+}
+.nav a.cta:hover{background:#ff7f4a}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(900px 380px at 82% -10%,rgba(255,106,43,.30),transparent 62%),
+    radial-gradient(700px 320px at 8% 110%,rgba(47,107,216,.32),transparent 60%),
+    linear-gradient(160deg,#121a2b 0%,#1b2740 100%);
+  color:#fff;
+  padding:56px 0 64px;
+}
+.hero-in{
+  display:grid;grid-template-columns:1.25fr .95fr;gap:44px;align-items:center;
+}
+.hero .kicker{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;letter-spacing:1.5px;color:#ffc59e;
+  background:rgba(255,106,43,.14);
+  border:1px solid rgba(255,138,61,.35);
+  padding:5px 13px;border-radius:999px;margin-bottom:18px;
+}
+.hero .kicker i{width:7px;height:7px;border-radius:50%;background:var(--accent);display:block}
+h1{
+  font-size:clamp(30px,4.4vw,46px);
+  line-height:1.2;font-weight:900;letter-spacing:1px;
+  margin-bottom:16px;
+}
+h1 .hl{color:var(--accent-2)}
+.hero p.lead{
+  color:#c6cede;font-size:16px;max-width:34em;margin-bottom:26px;
+}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 22px;border-radius:11px;font-size:15px;font-weight:600;
+  transition:.2s;border:1px solid transparent;
+}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 8px 20px rgba(255,106,43,.32)}
+.btn-primary:hover{background:#ff7f4a;transform:translateY(-1px)}
+.btn-ghost{border-color:rgba(255,255,255,.28);color:#e7ecf6}
+.btn-ghost:hover{background:rgba(255,255,255,.1)}
+.hero-stats{
+  display:flex;gap:28px;margin-top:32px;flex-wrap:wrap;
+}
+.hero-stats div b{display:block;font-size:22px;color:#fff;font-weight:800}
+.hero-stats div span{font-size:12.5px;color:#9aa6bd;letter-spacing:.5px}
+
+/* hero visual */
+.hero-art{
+  position:relative;aspect-ratio:1/1;max-width:380px;margin-left:auto;
+  border-radius:26px;
+  background:linear-gradient(150deg,rgba(255,255,255,.10),rgba(255,255,255,.02));
+  border:1px solid rgba(255,255,255,.14);
+  display:grid;place-items:center;
+  overflow:hidden;
+}
+.hero-art svg{width:78%}
+.hero-art .tag{
+  position:absolute;font-size:11.5px;letter-spacing:1px;
+  background:rgba(18,26,43,.85);border:1px solid rgba(255,255,255,.16);
+  color:#ffd9bf;padding:4px 10px;border-radius:999px;
+}
+.tag.t1{top:16px;left:16px}
+.tag.t2{bottom:18px;right:16px;color:#bcd3ff}
+
+/* ---------- section base ---------- */
+section{padding:58px 0}
+.sec-head{margin-bottom:28px;max-width:44em}
+.sec-head .eyebrow{
+  font-size:12.5px;letter-spacing:2px;color:var(--accent);font-weight:700;
+  text-transform:uppercase;margin-bottom:8px;
+}
+.sec-head h2{
+  font-size:clamp(22px,2.6vw,29px);font-weight:800;line-height:1.3;color:var(--ink);
+}
+.sec-head p{color:var(--muted);font-size:14.5px;margin-top:9px}
+
+/* ---------- daily board ---------- */
+.board{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;
+}
+.board-top{
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+  padding:16px 20px;background:var(--ink);color:#fff;
+}
+.board-top .dot{width:8px;height:8px;background:#3ddc84;border-radius:50%;box-shadow:0 0 0 4px rgba(61,220,132,.18)}
+.board-top strong{font-size:15px}
+.board-top span{font-size:13px;color:#9aa6bd;margin-left:auto}
+.filters{display:flex;gap:8px;flex-wrap:wrap;padding:16px 20px 4px}
+.chip{
+  font-size:13.5px;padding:6px 15px;border-radius:999px;
+  border:1px solid var(--line);background:#fbfaf7;color:#4a5265;
+  cursor:pointer;transition:.18s;font-family:inherit;
+}
+.chip:hover{border-color:var(--accent);color:var(--accent)}
+.chip.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.rows{padding:8px 20px 20px}
+.row{
+  display:grid;grid-template-columns:64px 1.4fr 1fr auto;
+  gap:14px;align-items:center;
+  padding:14px 0;border-bottom:1px dashed var(--line);
+}
+.row:last-child{border-bottom:none}
+.row .idx{
+  font-weight:800;color:var(--accent);font-size:18px;
+  font-variant-numeric:tabular-nums;
+}
+.row .t b{display:block;font-size:15.5px;color:var(--ink)}
+.row .t small{color:var(--muted);font-size:13px}
+.row .meta{
+  font-size:13px;color:var(--muted);
+}
+.row .meta em{font-style:normal;color:var(--cool);font-weight:600}
+.row .pill{
+  font-size:12.5px;padding:4px 11px;border-radius:8px;
+  background:#fff1e8;color:#d9531a;white-space:nowrap;font-weight:600;
+}
+.empty-tip{
+  display:none;padding:22px 4px;color:var(--muted);font-size:14px;
+}
+
+/* ---------- cards ---------- */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px 22px;transition:.22s;
+  display:flex;flex-direction:column;gap:10px;
+}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(18,26,43,.10);border-color:#d6cfc1}
+.card .ico{
+  width:42px;height:42px;border-radius:12px;display:grid;place-items:center;
+  background:#fff1e8;color:var(--accent);
+}
+.card .ico svg{width:22px;height:22px}
+.card h3{font-size:17px;color:var(--ink);font-weight:800}
+.card p{font-size:14.2px;color:#525b6c;flex:1}
+.card .k{
+  font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);
+  padding-top:10px;display:flex;justify-content:space-between;gap:8px;
+}
+.card .k b{color:var(--ink)}
+
+/* ---------- feature split ---------- */
+.split{display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:start}
+.prose h2{font-size:clamp(21px,2.4vw,27px);font-weight:800;color:var(--ink);margin-bottom:14px;line-height:1.35}
+.prose p{font-size:15px;color:#3c4455;margin-bottom:14px}
+.prose p strong{color:var(--ink)}
+.pull{
+  border-left:4px solid var(--accent);background:#fff;
+  padding:16px 20px;border-radius:0 12px 12px 0;font-size:14.5px;color:#4a5265;
+  border-top:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line);
+}
+.steps{display:flex;flex-direction:column;gap:14px}
+.step{
+  display:flex;gap:16px;background:#fff;border:1px solid var(--line);
+  border-radius:14px;padding:18px 20px;
+}
+.step .n{
+  flex:none;width:34px;height:34px;border-radius:10px;
+  background:var(--ink);color:#fff;font-weight:800;
+  display:grid;place-items:center;font-size:15px;
+}
+.step h4{font-size:15.5px;color:var(--ink);margin-bottom:3px}
+.step p{font-size:13.8px;color:var(--muted)}
+
+/* ---------- download ---------- */
+.dl{
+  background:linear-gradient(145deg,#1b2740,#121a2b);
+  color:#fff;border-radius:22px;padding:40px 36px;
+  display:grid;grid-template-columns:1.3fr auto;gap:28px;align-items:center;
+  position:relative;overflow:hidden;
+}
+.dl::after{
+  content:"";position:absolute;right:-70px;top:-70px;width:260px;height:260px;
+  background:radial-gradient(circle,rgba(255,106,43,.35),transparent 70%);
+}
+.dl h2{font-size:clamp(20px,2.3vw,26px);font-weight:800;margin-bottom:10px}
+.dl p{color:#c1cade;font-size:14.5px;max-width:40em}
+.dl .btn-dl{
+  position:relative;z-index:2;
+  display:inline-flex;align-items:center;gap:9px;
+  background:var(--accent);color:#fff;font-weight:700;font-size:15px;
+  padding:14px 30px;border-radius:12px;
+  pointer-events:none;opacity:.92;
+}
+.dl .note{font-size:12.5px;color:#8e9ab2;margin-top:10px;position:relative;z-index:2}
+
+/* ---------- faq ---------- */
+.faq{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.qa{
+  background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 22px;
+}
+.qa h4{font-size:15.5px;color:var(--ink);margin-bottom:7px;font-weight:800}
+.qa p{font-size:14px;color:#525b6c}
+
+/* ---------- footer ---------- */
+footer{
+  background:var(--ink);color:#9aa6bd;padding:40px 0 28px;margin-top:16px;
+}
+.foot-in{display:flex;gap:30px;flex-wrap:wrap;justify-content:space-between;align-items:flex-start}
+.foot-brand{max-width:24em}
+.foot-brand .logo{margin-bottom:12px}
+.foot-brand p{font-size:13.5px;line-height:1.8}
+.foot-links{display:flex;gap:48px;flex-wrap:wrap}
+.foot-links h5{color:#fff;font-size:13.5px;letter-spacing:1px;margin-bottom:10px;font-weight:700}
+.foot-links a{display:block;font-size:13.5px;padding:3px 0;transition:.2s}
+.foot-links a:hover{color:var(--accent-2)}
+.copy{
+  border-top:1px solid rgba(255,255,255,.1);margin-top:28px;padding-top:18px;
+  font-size:12.5px;color:#727e94;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+}
+
+/* ---------- responsive ---------- */
+@media(max-width:900px){
+  .hero-in{grid-template-columns:1fr;gap:30px}
+  .hero-art{max-width:260px;margin:0 auto;order:-1}
+  .cards{grid-template-columns:1fr}
+  .split{grid-template-columns:1fr;gap:26px}
+  .dl{grid-template-columns:1fr;padding:30px 24px}
+  .faq{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+  .header-in{flex-wrap:wrap;gap:10px;padding:10px 0}
+  .nav{margin-left:0;width:100%;justify-content:flex-start;gap:2px}
+  .nav a{font-size:13px;padding:6px 9px}
+  h1{font-size:28px}
+  section{padding:42px 0}
+  .row{grid-template-columns:44px 1fr;gap:6px 12px}
+  .row .meta{grid-column:2;font-size:12.5px}
+  .row .pill{grid-column:2;justify-self:start}
+  .hero-stats{gap:18px}
+  .hero-stats div b{font-size:19px}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-in">
+    <a class="logo" href="#top">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M4 19 L12 4 L20 19 Z" fill="#121a2b"/><circle cx="12" cy="15" r="3" fill="#ffb020"/></svg>
+      </span>
+      每日大乱斗
+    </a>
+    <nav class="nav" aria-label="主导航">
+      <a href="#board">今日对局</a>
+      <a href="#roles">角色搭配</a>
+      <a href="#howto">上手路径</a>
+      <a href="#faq">常见问题</a>
+      <a href="#download" class="cta">获取入口</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap hero-in">
+      <div>
+        <span class="kicker"><i></i>每日更新 · 对局看点</span>
+        <h1>每日大乱斗</h1>
+        <p class="lead">把每天值得看的乱斗对局、角色搭配与模式变化放在一处。每日大乱斗以当日实际内容为准，先看列表再决定跟哪一局，省去在多个入口之间来回翻找。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#board">查看今日对局
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="#roles">角色搭配思路</a>
+        </div>
+        <div class="hero-stats">
+          <div><b>每日</b><span>更新节奏</span></div>
+          <div><b>3 类</b><span>对局标签</span></div>
+          <div><b>4 步</b><span>上手路径</span></div>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 200 200" fill="none">
+          <circle cx="100" cy="100" r="86" stroke="rgba(255,255,255,.14)" stroke-width="1.5"/>
+          <circle cx="100" cy="100" r="62" stroke="rgba(255,138,61,.35)" stroke-width="1.5" stroke-dasharray="5 7"/>
+          <path d="M100 40 L152 140 L48 140 Z" fill="url(#g1)" opacity=".9"/>
+          <circle cx="100" cy="112" r="17" fill="#121a2b"/>
+          <path d="M100 95 L109 112 L100 129 L91 112 Z" fill="#ffb020"/>
+          <circle cx="56" cy="66" r="7" fill="#2f6bd8"/>
+          <circle cx="150" cy="72" r="5" fill="#ff6a2b"/>
+          <defs><linearGradient id="g1" x1="60" y1="40" x2="140" y2="140"><stop stop-color="#ff8a3d"/><stop offset="1" stop-color="#d9531a"/></linearGradient></defs>
+        </svg>
+        <span class="tag t1">TODAY</span>
+        <span class="tag t2">ROLE PICK</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 今日对局 -->
+  <section id="board">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Daily Board</div>
+        <h2>今日对局一览</h2>
+        <p>按标签筛选当日条目。列表只做归类与看点摘要，具体内容以各条目的实际页面信息为准。</p>
+      </div>
+      <div class="board">
+        <div class="board-top">
+          <span class="dot"></span>
+          <strong>每日大乱斗 · 当日条目</strong>
+          <span>按标签筛选</span>
+        </div>
+        <div class="filters" role="group" aria-label="对局标签筛选">
+          <button class="chip on" data-filter="all" type="button">全部</button>
+          <button class="chip" data-filter="team" type="button">团队乱斗</button>
+          <button class="chip" data-filter="solo" type="button">单人乱斗</button>
+          <button class="chip" data-filter="limit" type="button">限时玩法</button>
+        </div>
+        <div class="rows" id="rows">
+          <div class="row" data-cat="team">
+            <span class="idx">01</span>
+            <div class="t"><b>团队乱斗 · 边缘卡位</b><small>用两人牵制换出正面推进窗口</small></div>
+            <div class="meta">看点：<em>站位与换位</em></div>
+            <span class="pill">团队</span>
+          </div>
+          <div class="row" data-cat="solo">
+            <span class="idx">02</span>
+            <div class="t"><b>单人乱斗 · 消耗节奏</b><small>先手不占优时如何拖到中段反打</small></div>
+            <div class="meta">看点：<em>节奏控制</em></div>
+            <span class="pill">单人</span>
+          </div>
+          <div class="row" data-cat="limit">
+            <span class="idx">03</span>
+            <div class="t"><b>限时玩法 · 快节奏收尾</b><small>倒计时阶段的取舍与风险判断</small></div>
+            <div class="meta">看点：<em>时间管理</em></div>
+            <span class="pill">限时</span>
+          </div>
+          <div class="row" data-cat="team">
+            <span class="idx">04</span>
+            <div class="t"><b>团队乱斗 · 双前排开局</b><small>前排互换后的第二波推进时机</small></div>
+            <div class="meta">看点：<em>开团与跟随</em></div>
+            <span class="pill">团队</span>
+          </div>
+          <div class="row" data-cat="solo">
+            <span class="idx">05</span>
+            <div class="t"><b>单人乱斗 · 反手应对</b><small>被压制时的走位与资源分配</small></div>
+            <div class="meta">看点：<em>反手思路</em></div>
+            <span class="pill">单人</span>
+          </div>
+        </div>
+        <p class="empty-tip" id="emptyTip">该标签下暂无条目，切换其他标签查看。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 角色搭配 -->
+  <section id="roles">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Role Picks</div>
+        <h2>角色搭配与分工</h2>
+        <p>每日大乱斗的阵容思路，通常围绕前排承伤、中段输出与后手补位三件事展开。</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <span class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l7 4v6c0 4-3 6.5-7 8-4-1.5-7-4-7-8V7l7-4z"/></svg>
+          </span>
+          <h3>前排承伤位</h3>
+          <p>负责先吃第一波伤害并把对手压回狭口，为队友争取站位时间。前排换血是否划算，取决于后续能否有人跟上。</p>
+          <div class="k"><span>要点</span><b>开团时机</b></div>
+        </article>
+        <article class="card">
+          <span class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20L20 4M14 4h6v6"/></svg>
+          </span>
+          <h3>中段输出位</h3>
+          <p>在前排建立接触后进入输出窗口，重点不是打满伤害，而是在对手调整前完成一轮有效交换。</p>
+          <div class="k"><span>要点</span><b>输出窗口</b></div>
+        </article>
+        <article class="card">
+          <span class="ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>
+          </span>
+          <h3>后手补位位</h3>
+          <p>观察第一轮接触结果再决定跟进或回收，适合处理被反打与残局收尾，容错空间相对更大。</p>
+          <div class="k"><span>要点</span><b>残局判断</b></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 上手路径 -->
+  <section id="howto">
+    <div class="wrap split">
+      <div class="prose">
+        <h2>从看懂一局到跟上每日大乱斗</h2>
+        <p>每日大乱斗的内容量集中在“每天有什么”和“这一局为什么这样打”两点上。前者靠列表解决，后者需要把对局拆成几个可复述的片段。</p>
+        <p><strong>先看标签，再看摘要。</strong>团队、单人、限时三类条目的判断重点不同：团队看站位与跟随，单看节奏与反手，限时看倒计时阶段的取舍。先按自己的偏好筛一轮，阅读效率会明显提高。</p>
+        <p><strong>把一局拆成开局、接触、收尾三段。</strong>开局决定谁先占位，接触决定交换是否划算，收尾决定风险是否值得承担。三段都能说清楚，这一局的看点基本就抓住了。</p>
+        <div class="pull">提示：条目摘要只做方向说明，不替代对局本身。遇到与自己理解不一致的地方，回到该条目的原始内容核对更稳妥。</div>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <span class="n">1</span>
+          <div><h4>确定今天的观看方向</h4><p>在今日对局区选择一个标签，缩小范围。</p></div>
+        </div>
+        <div class="step">
+          <span class="n">2</span>
+          <div><h4>对照角色分工</h4><p>用前排、输出、补位三个位置去理解阵容安排。</p></div>
+        </div>
+        <div class="step">
+          <span class="n">3</span>
+          <div><h4>记录一个可复用的判断</h4><p>例如“前排互换后不要马上压进”，比笼统的胜负结论更有用。</p></div>
+        </div>
+        <div class="step">
+          <span class="n">4</span>
+          <div><h4>第二天回看变化</h4><p>每日大乱斗每天更新，同类条目的差异本身就是信息。</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 下载 -->
+  <section id="download">
+    <div class="wrap">
+      <div class="dl">
+        <div>
+          <h2>获取每日大乱斗入口</h2>
+          <p>入口资源仍在准备中，页面内容可先行浏览。开放后此处会替换为正式下载地址，目前不会触发任何下载动作。</p>
+          <p class="note">当前状态：资源未就绪 · 按钮暂不可用</p>
+        </div>
+        <a class="btn-dl" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></svg>
+          下载
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">FAQ</div>
+        <h2>常见问题</h2>
+        <p>关于内容范围与使用方式的基础说明。</p>
+      </div>
+      <div class="faq">
+        <div class="qa">
+          <h4>每日大乱斗多久更新一次？</h4>
+          <p>按日更新，条目随当日内容调整。列表中的编号仅表示展示顺序，不代表排名。</p>
+        </div>
+        <div class="qa">
+          <h4>标签筛选是怎么工作的？</h4>
+          <p>点击“团队乱斗”“单人乱斗”“限时玩法”会即时过滤当前列表，属于页面内的静态筛选，不加载新页面。</p>
+        </div>
+        <div class="qa">
+          <h4>角色搭配能直接照搬吗？</h4>
+          <p>搭配思路用于理解分工，不是固定配置。实际对局中对手阵容与地形都会影响选择。</p>
+        </div>
+        <div class="qa">
+          <h4>下载按钮为什么点不动？</h4>
+          <p>入口资源尚未就绪，按钮处于禁用状态，避免跳转到无效地址。开放后会更新为可用链接。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-in">
+      <div class="foot-brand">
+        <a class="logo" href="#top">
+          <span class="mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M4 19 L12 4 L20 19 Z" fill="#121a2b"/><circle cx="12" cy="15" r="3" fill="#ffb020"/></svg>
+          </span>
+          每日大乱斗
+        </a>
+        <p>每日大乱斗整理当日对局看点、角色分工与上手路径，内容以列表与摘要形式呈现，便于按需查看。</p>
+      </div>
+      <div class="foot-links">
+        <div>
+          <h5>内容</h5>
+          <a href="#board">今日对局</a>
+          <a href="#roles">角色搭配</a>
+          <a href="#howto">上手路径</a>
+        </div>
+        <div>
+          <h5>其他</h5>
+          <a href="#faq">常见问题</a>
+          <a href="#download">获取入口</a>
+          <a href="#top">返回顶部</a>
+        </div>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© 每日大乱斗 · 内容随日更新，具体以条目实际信息为准</span>
+      <span>页面内筛选与展示为静态功能</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var chips=document.querySelectorAll('.chip');
+  var rows=document.querySelectorAll('#rows .row');
+  var tip=document.getElementById('emptyTip');
+  chips.forEach(function(c){
+    c.addEventListener('click',function(){
+      chips.forEach(function(x){x.classList.remove('on')});
+      c.classList.add('on');
+      var f=c.getAttribute('data-filter'),shown=0;
+      rows.forEach(function(r){
+        var ok=(f==='all'||r.getAttribute('data-cat')===f);
+        r.style.display=ok?'grid':'none';
+        if(ok)shown++;
+      });
+      tip.style.display=shown?'none':'block';
+    });
+  });
+})();
+</script>
+</body>
+              </html>
