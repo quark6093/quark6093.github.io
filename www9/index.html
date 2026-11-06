@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>www.91.com制片厂-影视制片厂_短片制作_内容制作团队</title>
+<meta name="description" content="www.91.com制片厂是一个面向内容创作者的影视制片厂主题站点，聚合短片制作、剧本策划、拍摄执行与后期制作的内容线索，帮助访客了解制片流程、团队分工与作品方向。">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111318'/%3E%3Cpath d='M16 20h32v6H16zM16 30h20v6H16zM16 40h26v6H16z' fill='%23f5b544'/%3E%3Ccircle cx='46' cy='33' r='6' fill='%23e8563f'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --ink:#14161b;
+    --ink-2:#20242c;
+    --paper:#f6f3ec;
+    --paper-2:#efe9dc;
+    --line:#d9d1c0;
+    --gold:#c8892a;
+    --red:#c2402f;
+    --text:#2b2b2b;
+    --muted:#6a655c;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+    background:var(--paper);
+    color:var(--text);
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  img,svg{display:block;max-width:100%;}
+  .wrap{width:min(1120px,92vw);margin:0 auto;}
+
+  /* header */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(20,22,27,.96);
+    border-bottom:1px solid #2e333c;
+    backdrop-filter:blur(6px);
+  }
+  .bar{
+    display:flex;align-items:center;gap:22px;
+    padding:12px 0;
+  }
+  .logo{
+    display:flex;align-items:center;gap:10px;
+    color:#fff;text-decoration:none;flex-shrink:0;
+  }
+  .logo .mark{width:34px;height:34px;flex-shrink:0;}
+  .logo .brand{
+    font-size:16px;font-weight:700;letter-spacing:.4px;white-space:nowrap;
+  }
+  nav.main{
+    margin-left:auto;display:flex;gap:6px;flex-wrap:wrap;
+  }
+  nav.main a{
+    color:#cfc9bd;text-decoration:none;font-size:14px;
+    padding:6px 11px;border-radius:6px;transition:.18s;
+  }
+  nav.main a:hover{background:#2a2f38;color:#fff;}
+
+  /* hero */
+  .hero{
+    background:
+      radial-gradient(900px 380px at 88% -10%, rgba(200,137,42,.20), transparent 62%),
+      linear-gradient(160deg,#14161b 0%,#1d2129 60%,#262b34 100%);
+    color:#f2eee5;
+    padding:58px 0 54px;
+    border-bottom:3px solid var(--gold);
+  }
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center;}
+  .kicker{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:12.5px;letter-spacing:2px;color:var(--gold);
+    border:1px solid rgba(200,137,42,.5);border-radius:999px;
+    padding:4px 13px;margin-bottom:18px;
+  }
+  h1{
+    font-size:clamp(23px,3.5vw,37px);
+    line-height:1.32;margin:0 0 16px;font-weight:800;letter-spacing:.5px;
+    word-break:break-word;
+  }
+  h1 .accent{color:var(--gold);}
+  .lede{font-size:15.5px;color:#c8c2b6;margin:0 0 24px;max-width:46em;}
+  .cta-row{display:flex;gap:12px;flex-wrap:wrap;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:11px 22px;border-radius:8px;font-size:14.5px;font-weight:600;
+    text-decoration:none;transition:.18s;border:1px solid transparent;
+  }
+  .btn-primary{background:var(--gold);color:#1a1408;}
+  .btn-primary:hover{background:#dda040;}
+  .btn-ghost{border-color:#4a4f59;color:#e6e0d4;}
+  .btn-ghost:hover{border-color:var(--gold);color:var(--gold);}
+  .btn[aria-disabled="true"]{pointer-events:none;opacity:.82;}
+
+  .hero-art{
+    background:rgba(255,255,255,.04);
+    border:1px solid #3a4049;border-radius:14px;padding:20px;
+  }
+  .hero-art .cap{font-size:12px;letter-spacing:1.5px;color:#9a9386;margin-bottom:14px;}
+  .stat{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px dashed #3a4049;font-size:13.5px;}
+  .stat:last-child{border-bottom:0;}
+  .stat b{color:var(--gold);font-weight:700;}
+
+  /* sections */
+  section{padding:56px 0;}
+  section.alt{background:var(--paper-2);}
+  .sec-head{margin-bottom:28px;}
+  .sec-head .tag{
+    font-size:12px;letter-spacing:2px;color:var(--red);font-weight:700;
+  }
+  h2{
+    font-size:clamp(19px,2.4vw,25px);margin:6px 0 10px;font-weight:800;color:var(--ink);
+    letter-spacing:.3px;
+  }
+  .sec-head p{margin:0;color:var(--muted);font-size:14.5px;max-width:54em;}
+
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .card{
+    background:#fff;border:1px solid var(--line);border-radius:12px;
+    padding:22px;display:flex;flex-direction:column;
+  }
+  .card .num{
+    font-size:12px;font-weight:700;color:var(--gold);letter-spacing:1px;margin-bottom:8px;
+  }
+  .card h3{margin:0 0 8px;font-size:16.5px;color:var(--ink);font-weight:700;}
+  .card p{margin:0;font-size:14px;color:#4b4740;}
+
+  .split{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:start;}
+  .prose p{margin:0 0 14px;font-size:15px;color:#3a3630;}
+  .prose strong{color:var(--ink);}
+
+  .flow{list-style:none;margin:0;padding:0;counter-reset:step;}
+  .flow li{
+    position:relative;padding:0 0 18px 44px;font-size:14.2px;color:#3a3630;
+  }
+  .flow li::before{
+    counter-increment:step;content:counter(step);
+    position:absolute;left:0;top:0;
+    width:28px;height:28px;border-radius:50%;
+    background:var(--ink);color:var(--gold);
+    display:flex;align-items:center;justify-content:center;
+    font-size:13px;font-weight:700;
+  }
+  .flow li b{display:block;color:var(--ink);font-size:14.5px;margin-bottom:2px;}
+  .flow li:last-child{padding-bottom:0;}
+
+  .works{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+  .work{
+    background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;
+    display:flex;
+  }
+  .work .thumb{width:120px;flex-shrink:0;background:#1d2129;}
+  .work .body{padding:16px 18px;}
+  .work .body h3{margin:0 0 6px;font-size:15.5px;color:var(--ink);}
+  .work .body p{margin:0 0 8px;font-size:13.5px;color:#514c44;}
+  .work .meta{font-size:12px;color:var(--muted);letter-spacing:.5px;}
+
+  .notice{
+    background:#fff;border-left:4px solid var(--red);border-radius:8px;
+    padding:18px 20px;font-size:14px;color:#44403a;
+  }
+  .notice b{color:var(--ink);}
+
+  .filter-bar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px;}
+  .chip{
+    border:1px solid var(--line);background:#fff;color:#4b4740;
+    padding:7px 15px;border-radius:999px;font-size:13.5px;cursor:pointer;
+    font-family:inherit;transition:.18s;
+  }
+  .chip:hover{border-color:var(--gold);}
+  .chip.active{background:var(--ink);color:#f3eee3;border-color:var(--ink);}
+  .empty{font-size:14px;color:var(--muted);padding:14px 0;display:none;}
+
+  footer{
+    background:#14161b;color:#a8a294;padding:38px 0 26px;
+    border-top:3px solid var(--gold);
+  }
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px;}
+  footer h4{color:#f0ebdf;font-size:14px;margin:0 0 10px;letter-spacing:.5px;}
+  footer p{margin:0 0 8px;font-size:13px;line-height:1.7;}
+  footer a{color:#cfc9bd;text-decoration:none;font-size:13px;display:block;padding:3px 0;}
+  footer a:hover{color:var(--gold);}
+  .copy{
+    margin-top:26px;padding-top:16px;border-top:1px solid #2a2f38;
+    font-size:12.5px;color:#7d786e;text-align:center;
+  }
+
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;gap:30px;}
+    .cards{grid-template-columns:1fr 1fr;}
+    .split{grid-template-columns:1fr;gap:26px;}
+    .works{grid-template-columns:1fr;}
+    .foot-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:640px){
+    .bar{flex-wrap:wrap;gap:10px;padding:10px 0;}
+    nav.main{margin-left:0;width:100%;overflow-x:auto;flex-wrap:nowrap;padding-bottom:2px;}
+    nav.main a{white-space:nowrap;font-size:13px;padding:5px 9px;}
+    .logo .brand{font-size:14.5px;}
+    .hero{padding:38px 0 36px;}
+    section{padding:40px 0;}
+    .cards{grid-template-columns:1fr;}
+    .work .thumb{width:88px;}
+    .foot-grid{grid-template-columns:1fr;gap:22px;}
+    .cta-row .btn{flex:1;justify-content:center;}
+  }
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#top" aria-label="www.91.com制片厂 首页">
+      <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#1b1e25"/>
+        <path d="M15 19h34v6H15zM15 29h21v6H15zM15 39h27v6H15z" fill="#c8892a"/>
+        <circle cx="48" cy="32" r="6" fill="#c2402f"/>
+      </svg>
+      <span class="brand">www.91.com制片厂</span>
+    </a>
+    <nav class="main" aria-label="主导航">
+      <a href="#about">关于制片厂</a>
+      <a href="#process">制片流程</a>
+      <a href="#works">作品方向</a>
+      <a href="#team">团队分工</a>
+      <a href="#faq">常见问答</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="kicker">FILM &amp; VIDEO STUDIO</span>
+        <h1>www.91.com制片厂</h1>
+        <p class="lede">www.91.com制片厂是一个以短片制作与内容创作为中心的制片厂主题站点。我们把剧本策划、拍摄执行、后期制作与团队协作放在同一条线索上，让访客按自己的需要找到对应信息：想看流程就看流程，想了解作品方向就看作品方向。</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#process">查看制片流程</a>
+          <a class="btn btn-ghost" href="#works">浏览作品方向</a>
+        </div>
+      </div>
+      <aside class="hero-art" aria-label="制片厂内容概览">
+        <div class="cap">制片厂内容概览</div>
+        <div class="stat"><span>核心方向</span><b>短片制作</b></div>
+        <div class="stat"><span>前期工作</span><b>剧本策划</b></div>
+        <div class="stat"><span>现场环节</span><b>拍摄执行</b></div>
+        <div class="stat"><span>收尾环节</span><b>后期制作</b></div>
+        <div class="stat"><span>组织方式</span><b>团队分工</b></div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="tag">关于制片厂</span>
+        <h2>一个制片厂站点该回答什么</h2>
+        <p>访问制片厂主题页面的人，通常想知道三件事：这里做什么内容、内容怎样被制作出来、以及参与或了解该从哪里入手。以下栏目围绕这三点展开。</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="num">01 内容定位</div>
+          <h3>短片与视频内容</h3>
+          <p>www.91.com制片厂的内容重心放在短片与视频作品上，围绕一个可执行的主题组织脚本、镜头与成片，而不是把素材简单堆叠在一起。</p>
+        </article>
+        <article class="card">
+          <div class="num">02 制作方式</div>
+          <h3>从策划到成片</h3>
+          <p>制作被拆成前期、现场与后期三段。每个阶段有明确的产出物：脚本与分镜、拍摄素材、剪辑与调色版本，便于逐段确认。</p>
+        </article>
+        <article class="card">
+          <div class="num">03 协作入口</div>
+          <h3>团队分工与协作</h3>
+          <p>制片厂的工作依赖分工：策划、摄影、剪辑、声音各有职责。了解分工，是判断自己能在哪个环节参与的第一步。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="alt" id="process">
+    <div class="wrap split">
+      <div>
+        <div class="sec-head">
+          <span class="tag">制片流程</span>
+          <h2>四个阶段，一条清晰的制作线</h2>
+          <p>流程的价值不在于步骤数量，而在于每一步都有可交付、可讨论的结果。www.91.com制片厂按以下顺序推进一个制作项目。</p>
+        </div>
+        <ol class="flow">
+          <li><b>剧本与策划</b>确定主题、时长与受众，产出故事大纲与脚本初稿，明确这次制作要解决的核心表达问题。</li>
+          <li><b>分镜与筹备</b>把文字转成可拍摄的镜头表，列出场地、人物、道具与时间安排，提前暴露执行难点。</li>
+          <li><b>拍摄执行</b>按镜头表完成素材采集，现场同步记录场记信息，减少后期返工的可能。</li>
+          <li><b>后期与交付</b>完成剪辑、调色、声音与字幕，形成可播放的成片版本，并保留工程文件便于修改。</li>
+        </ol>
+      </div>
+      <div class="prose">
+        <div class="sec-head">
+          <span class="tag">流程之外</span>
+          <h2>为什么顺序比速度更重要</h2>
+        </div>
+        <p>短片制作里最常见的损耗，来自前期没有想清楚就进入拍摄。脚本阶段多花一天，往往能省下现场半天。<strong>www.91.com制片厂</strong>把前期确认视为流程的硬节点：脚本与分镜未定，不进入拍摄。</p>
+        <p>后期同样需要预留时间。剪辑、调色与声音是三个独立工序，把它们压缩在同一时段完成，成片质量通常会被牺牲。流程表上留出缓冲，是对作品的基本尊重。</p>
+        <p>对初次接触制片的人来说，理解这条顺序比记住术语更有用。它解释了为什么一个几分钟的短片，需要跨越多个环节与多个人。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORKS -->
+  <section id="works">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="tag">作品方向</span>
+        <h2>按类型浏览制片厂的内容方向</h2>
+        <p>以下为制片厂的内容方向示例，按类型筛选可快速定位。条目说明的是方向与侧重，不代表具体作品的播出或上线状态。</p>
+      </div>
+      <div class="filter-bar" role="group" aria-label="作品方向筛选">
+        <button class="chip active" data-filter="all">全部</button>
+        <button class="chip" data-filter="story">叙事短片</button>
+        <button class="chip" data-filter="doc">纪实影像</button>
+        <button class="chip" data-filter="brand">品牌视频</button>
+      </div>
+      <div class="works" id="workList">
+        <article class="work" data-cat="story">
+          <div class="thumb">
+            <svg viewBox="0 0 120 120" width="120" height="120" aria-hidden="true">
+              <rect width="120" height="120" fill="#1d2129"/>
+              <circle cx="60" cy="52" r="20" fill="none" stroke="#c8892a" stroke-width="3"/>
+              <path d="M50 44l18 8-18 8z" fill="#c2402f"/>
+              <rect x="26" y="84" width="68" height="5" fill="#3a4049"/>
+              <rect x="26" y="94" width="44" height="5" fill="#3a4049"/>
+            </svg>
+          </div>
+          <div class="body">
+            <h3>叙事短片方向</h3>
+            <p>以人物与情节为核心，重视脚本结构与表演调度，时长通常控制在十分钟以内。</p>
+            <div class="meta">侧重：脚本 · 表演 · 剪辑节奏</div>
+          </div>
+        </article>
+        <article class="work" data-cat="doc">
+          <div class="thumb">
+            <svg viewBox="0 0 120 120" width="120" height="120" aria-hidden="true">
+              <rect width="120" height="120" fill="#1d2129"/>
+              <rect x="34" y="34" width="52" height="34" rx="4" fill="none" stroke="#c8892a" stroke-width="3"/>
+              <circle cx="60" cy="51" r="9" fill="none" stroke="#c2402f" stroke-width="3"/>
+              <rect x="34" y="78" width="52" height="5" fill="#3a4049"/>
+              <rect x="34" y="88" width="34" height="5" fill="#3a4049"/>
+            </svg>
+          </div>
+          <div class="body">
+            <h3>纪实影像方向</h3>
+            <p>以真实场景与人物为对象，强调现场记录与素材整理，后期以信息清晰为先。</p>
+            <div class="meta">侧重：现场 · 采访 · 素材整理</div>
+          </div>
+        </article>
+        <article class="work" data-cat="brand">
+          <div class="thumb">
+            <svg viewBox="0 0 120 120" width="120" height="120" aria-hidden="true">
+              <rect width="120" height="120" fill="#1d2129"/>
+              <path d="M36 40h48v26H36z" fill="none" stroke="#c8892a" stroke-width="3"/>
+              <path d="M52 78h16v5H52z" fill="#c2402f"/>
+              <path d="M60 30v8M44 34l5 6M76 34l-5 6" stroke="#c2402f" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="body">
+            <h3>品牌视频方向</h3>
+            <p>围绕一个明确的表达目标组织画面，注重信息层次与画面统一，交付周期相对可控。</p>
+            <div class="meta">侧重：目标 · 画面统一 · 交付节奏</div>
+          </div>
+        </article>
+        <article class="work" data-cat="story">
+          <div class="thumb">
+            <svg viewBox="0 0 120 120" width="120" height="120" aria-hidden="true">
+              <rect width="120" height="120" fill="#1d2129"/>
+              <path d="M30 36h60v40H30z" fill="none" stroke="#c8892a" stroke-width="3"/>
+              <path d="M42 88h36" stroke="#c2402f" stroke-width="3" stroke-linecap="round"/>
+              <path d="M60 76v12" stroke="#c2402f" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="body">
+            <h3>短剧集方向</h3>
+            <p>把同一主题拆成多个短单元，单元之间保持人物或场景的连续性，适合系列化呈现。</p>
+            <div class="meta">侧重：单元结构 · 连续性 · 系列化</div>
+          </div>
+        </article>
+      </div>
+      <p class="empty" id="emptyTip">该方向暂无条目，可切换其他类型查看全部内容方向。</p>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="alt" id="team">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="tag">团队分工</span>
+        <h2>一个制作组通常由哪些角色组成</h2>
+        <p>www.91.com制片厂的协作逻辑是：角色对应职责，职责对应产出物。规模较小时一人可兼多职，但职责边界仍应清楚。</p>
+      </div>
+      <div class="split">
+        <div class="prose">
+          <p><strong>策划与编剧</strong>负责主题与脚本，回答“这次要讲什么”。产出物是故事大纲与可拍摄脚本。</p>
+          <p><strong>导演与摄影</strong>负责把文字转换为画面，决定镜头、构图与节奏。产出物是分镜表与拍摄素材。</p>
+          <p><strong>剪辑与声音</strong>负责成片的组织与听感，决定信息出现的顺序与情绪走向。产出物是成片版本与工程文件。</p>
+          <p><strong>制片协调</strong>负责时间、场地与人员安排，让上述工作按流程推进。产出物是可执行的制作计划。</p>
+        </div>
+        <div class="notice">
+          <p><b>关于页面信息的说明：</b>本站介绍的是制片厂的工作方式与内容方向，用于帮助访客理解制作流程与角色分工。页面未声明具体的上线作品、播出时间或合作方，相关条目以方向描述为主。</p>
+          <p style="margin-top:10px;">若需获取实际项目资料，请通过下方栏目中的说明了解页面内容范围，再按需查阅对应部分。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="tag">常见问答</span>
+        <h2>了解www.91.com制片厂时常见的几个问题</h2>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="num">Q1</div>
+          <h3>这个站点主要介绍什么？</h3>
+          <p>主要介绍制片厂的内容方向、制作流程与团队分工，让访客在较短时间内建立对短片制作的整体理解。</p>
+        </article>
+        <article class="card">
+          <div class="num">Q2</div>
+          <h3>新手从哪里读起？</h3>
+          <p>建议先看制片流程，再看团队分工。理解顺序与角色之后，作品方向中的类型描述会更容易对应到实际工作。</p>
+        </article>
+        <article class="card">
+          <div class="num">Q3</div>
+          <h3>作品条目代表已上线吗？</h3>
+          <p>页面中的作品条目描述的是内容方向与侧重，并不代表具体作品的上线或播出状态，请以方向说明为准。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div>
+      <h4>www.91.com制片厂</h4>
+      <p>以短片制作与内容创作为中心的制片厂主题站点，整理制片流程、作品方向与团队分工的说明。</p>
+      <p><a href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1" style="display:inline-block;color:#c8892a;pointer-events:none;">下载</a> 制作资料包（后续开放）</p>
+    </div>
+    <div>
+      <h4>栏目导航</h4>
+      <a href="#about">关于制片厂</a>
+      <a href="#process">制片流程</a>
+      <a href="#works">作品方向</a>
+      <a href="#team">团队分工</a>
+    </div>
+    <div>
+      <h4>内容说明</h4>
+      <p>页面所述流程与分工为通用制作方式的整理，作品条目仅表示内容方向。</p>
+      <p>如需更详细了解，可回到 <a href="#faq" style="display:inline;color:#c8892a;">常见问答</a> 阅读。</p>
+    </div>
+  </div>
+  <div class="wrap copy">© www.91.com制片厂 · 制片厂主题内容页面</div>
+</footer>
+
+<script>
+  (function(){
+    var chips = document.querySelectorAll('.chip');
+    var items = document.querySelectorAll('#workList .work');
+    var empty = document.getElementById('emptyTip');
+    chips.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        chips.forEach(function(b){ b.classList.remove('active'); });
+        btn.classList.add('active');
+        var f = btn.getAttribute('data-filter');
+        var shown = 0;
+        items.forEach(function(it){
+          var ok = (f === 'all') || (it.getAttribute('data-cat') === f);
+          it.style.display = ok ? '' : 'none';
+          if(ok) shown++;
+        });
+        empty.style.display = shown === 0 ? 'block' : 'none';
+      });
+    });
+  })();
+</script>
+
+</body>
+  </html>
